@@ -1,0 +1,18 @@
+
+version: '3.4'
+services:
+
+  integration-test:
+    build:
+      context: .
+      dockerfile: ./docker/Zerver/Dockerfile
+      network: host
+    image: frameworklessapp
+
+  run-app:
+    build:
+      context: .
+      dockerfile: ./docker/runApp/Dockerfile
+    image: integration-tests
+    ports:
+      - "8080:8080"
