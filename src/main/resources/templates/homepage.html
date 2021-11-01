@@ -33,13 +33,14 @@
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-light" type="submit">Search</button>
+                <a class="nav-item nav-link active" style="color: white; border: 2px solid #f74a7e; margin-left: 5px;border-radius: 5px" href="/logout">Logout</a>
             </form>
         </div>
     </nav>
     <div class="container-fluid"> 
         <div class="row"> 
            <div class="col mt-4 right">
-               <h2 style="margin-left: 10px;">Tables</h2>
+               <h2 style="margin-left: 10px;">Table</h2>
                 <div class="box" onclick="showTable('t1')" th:style="${#lists.contains(tables, 't1') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
                     <h2 class="tablename">T1</h2>
                     <div class="footer">
@@ -48,7 +49,6 @@
                         </span>
                     </div>
                 </div>
-
                 <div class="box" onclick="showTable('t2')" th:style="${#lists.contains(tables, 't2') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
                     <h2 class="tablename">T2</h2>
                     <div class="footer">

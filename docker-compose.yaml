@@ -1,18 +1,22 @@
-
-version: '3.4'
+version: "3.5"
 services:
-
-  integration-test:
-    build:
-      context: .
-      dockerfile: ./docker/Zerver/Dockerfile
-      network: host
-    image: frameworklessapp
-
-  run-app:
-    build:
-      context: .
-      dockerfile: ./docker/runApp/Dockerfile
-    image: integration-tests
+  mysql-db:
+    image: mysql:latest
     ports:
-      - "8080:8080"
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: gokul
+      MYSQL_PASSWORD: gokul656
+      MYSQL_DATABASE: springsdb
+
+  zervrer:
+    depends_on:
+      - mysql-db
+    ports:
+      - 8080:8080
+    build: "./"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3307/springsdb&useSSL=false
+      SPRING_DATASOURCE_USERNAME: gokul
+      SPRING_DATASOURCE_PASSWORD: gokul656

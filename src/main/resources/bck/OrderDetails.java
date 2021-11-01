@@ -1,4 +1,4 @@
-package com.malware.zerver.model;
+package bck;
 
 import lombok.Getter;
 import lombok.Setter;

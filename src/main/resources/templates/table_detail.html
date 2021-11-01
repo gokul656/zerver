@@ -160,9 +160,6 @@
       console.log(data);
     }
 
-    window.onload=function(){
-        console.log([[${foodList}]]);
-    }
 </script>
 <body>
     <div class="topnav">
@@ -191,7 +188,7 @@
     <div class="container" style="width: 20%; background-color: #54acff">
         <h3 style="margin: 20px">Amount payable : </h3><h1 style="margin: 20px;" class="align-middle" th:text="${total}">0</h1>
     </div>
-  
+
     <br>
     <div class="forms">
       <input type="submit" class="submit-btn" onclick=getTableData()>
