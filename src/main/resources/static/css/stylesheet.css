@@ -59,3 +59,8 @@
 .branch-box:hover{
     box-shadow: 0 8px 16px 0 #96a8fb;
 }
+
+.warning-image{
+    height: 40%;
+    width: 40%;
+}
