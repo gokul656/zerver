@@ -166,7 +166,6 @@
         <a class="active" href="/homepage">Home</a>
         <a style="float: right;" href="/logout">Logout</a>
       </div>
-
     <div class="container">
         <table id="foodDetails" style="width: 100%">
             <tr>
@@ -180,7 +179,7 @@
                 <td class="align-middle" style="text-align: left; padding-left: 40px" th:text="${foodItem.name}"></td>
                 <td class="align-middle" style="text-align: center;" th:text="${foodItem.description}"></td>
                 <td class="align-middle" style="text-align: center"  th:text="${foodItem.price}"></td>
-                <td class="align-middle"  style="text-align: center;"><input class="text-input" id="qty" type="number" min="0" max="10" th:value="${foodItem.qty} != 0 ? ${foodItem.qty} : ''" size="50%" placeholder="0"></td>
+                <td class="align-middle" style="text-align: center;"><input class="text-input" id="qty" type="number" min="0" max="10" th:value="${foodItem.qty} != 0 ? ${foodItem.qty} : ''" size="50%" placeholder="0"></td>
                 <td class="align-middle" style="text-align: center;" th:text="${foodItem.price}*${foodItem.qty}">0</td>
             </tr>
         </table>

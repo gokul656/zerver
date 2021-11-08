@@ -23,13 +23,12 @@
 
 <script th:inline="javascript">
     window.onload=function(){
-        console.log([[${foodList}]]);
-    }
+        console.log([[${ordersPerTable}]]);
 </script>
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand">Zerver</a>
+            <a class="navbar-brand" href="/homepage">Zerver</a>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-light" type="submit">Search</button>
@@ -41,7 +40,7 @@
         <div class="row"> 
            <div class="col mt-4 right">
                <h2 style="margin-left: 10px;">Table</h2>
-                <div class="box" onclick="showTable('t1')" th:style="${#lists.contains(tables, 't1') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
+                <div class="box" onclick="showTable('t1')" id="t1" th:style="${#lists.contains(tables, 't1') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
                     <h2 class="tablename">T1</h2>
                     <div class="footer">
                         <span class="d-inline-block zerverPopover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="[${tables}]">
@@ -49,7 +48,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="box" onclick="showTable('t2')" th:style="${#lists.contains(tables, 't2') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
+                <div class="box" onclick="showTable('t2')" id="t2" th:style="${#lists.contains(tables, 't2') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
                     <h2 class="tablename">T2</h2>
                     <div class="footer">
                         <span class="d-inline-block zerverPopover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="${tables}">
@@ -57,7 +56,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="box" onclick="showTable('t3')" th:style="${#lists.contains(tables, 't3') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
+                <div class="box" onclick="showTable('t3')" id="t3" th:style="${#lists.contains(tables, 't3') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
                     <h2 class="tablename">T3</h2>
                     <div class="footer">
                         <span class="d-inline-block zerverPopover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="${tables}">
@@ -65,7 +64,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="box" onclick="showTable('t4')" th:style="${#lists.contains(tables, 't4') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
+                <div class="box" onclick="showTable('t4')" id="t4" th:style="${#lists.contains(tables, 't4') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
                     <h2 class="tablename">T4</h2>
                     <div class="footer">
                         <span class="d-inline-block zerverPopover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="${tables}">
@@ -73,7 +72,7 @@
                         </span>
                     </div>
                 </div>                
-                <div class="box" onclick="showTable('t5')" th:style="${#lists.contains(tables, 't5') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
+                <div class="box" onclick="showTable('t5')" id="t5" th:style="${#lists.contains(tables, 't5') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
                     <h2 class="tablename">T5</h2>
                     <div class="footer">
                         <span class="d-inline-block zerverPopover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="${tables}">
@@ -82,7 +81,7 @@
                     </div>
                 </div>
 
-                <div class="box" onclick="showTable('t6')" th:style="${#lists.contains(tables, 't6') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
+                <div class="box" onclick="showTable('t6')" id="t6" th:style="${#lists.contains(tables, 't6') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
                     <h2 class="tablename">T6</h2>
                     <div class="footer">
                         <span class="d-inline-block zerverPopover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="${tables}">
@@ -90,7 +89,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="box" onclick="showTable('t7')" th:style="${#lists.contains(tables, 't7') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
+                <div class="box" onclick="showTable('t7')" id="t7" th:style="${#lists.contains(tables, 't7') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
                     <h2 class="tablename">T7</h2>
                     <div class="footer">
                         <span class="d-inline-block zerverPopover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="${tables}">
@@ -98,7 +97,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="box" onclick="showTable('t8')" th:style="${#lists.contains(tables, 't8') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
+                <div class="box" onclick="showTable('t8')" id="t8" th:style="${#lists.contains(tables, 't8') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
                     <h2 class="tablename">T8</h2>
                     <div class="footer">
                         <span class="d-inline-block zerverPopover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="${tables}">
@@ -106,7 +105,7 @@
                         </span>
                     </div>
                 </div>                
-                <div class="box" onclick="showTable('t9')" th:style="${#lists.contains(tables, 't9') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
+                <div class="box" onclick="showTable('t9')" id="t9" th:style="${#lists.contains(tables, 't9') ? 'border: 2px solid #7395e6' : 'border: 2px solid grey'}">
                     <h2 class="tablename">T9</h2>
                     <div class="footer">
                         <span class="d-inline-block zerverPopover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="${tables}">
