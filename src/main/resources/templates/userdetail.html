@@ -16,7 +16,6 @@
 </head>
 <script th:inline="javascript">
     window.onload= function(){
-        console.log('Hello world');
         var uid = document.findElementById("uid");
         uid.value =  window.location.href.split("/").pop();
     }
@@ -46,6 +45,7 @@
         var bid = document.getElementById("branchId");
         console.log([[${userList}]]);
         branch.value = window.location.href.split("/").pop();
+
         [[${userList}]].forEach(it => {
             if(it.name == data || it.uid == data){
                 cardName.innerHTML = it.name;
@@ -101,6 +101,12 @@
                                 <input type="text" class="form-control" id="name" name="name" style="margin: 5px;" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1"  required autofocus>
                                 <input type="text" class="form-control" id="contact" name="contact" style="margin: 5px;"  placeholder="Contact" aria-label="Contact" aria-describedby="basic-addon1"  required autofocus>
                                 <input type="text" class="form-control" id="email" name="username" style="margin: 5px;" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"  required autofocus>
+                                <select class="form-select" name="role" id="dropdownMenu" aria-labelledby="dropdownMenuButton1" >
+                                    <option class="dropdown-item" selected disabled>Set Role</option>
+                                    <th:block th:each="role : ${roles}">
+                                        <option class="dropdown-item" th:text="${role}">ROLE</option>
+                                    </th:block>
+                                </select>
                             </fieldset>
                         </div>
                     </div>
@@ -131,6 +137,7 @@
                 <input type="hidden" id="branch" name="branchId">
                 <button type="button" class="btn btn-secondary bg-info" style="border: none" data-dismiss="modal">No</button>
                 <button type="submit" class="btn btn-primary bg-danger" style="border: none">Yes</button>
+
             </form>
         </div>
         </div>
